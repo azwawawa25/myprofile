@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    /* Top Navigation Bar */
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .topnav a {
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .topnav a:hover {
+      background-color: #3a2b71;
+      border-radius: 5px;
+    }
+
+    .topnav a.active {
+      background-color: dimgray;
+      border-radius: 5px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .topnav {
+        flex-direction: column;
+        text-align: center;
+      }
+      .topnav a {
+        width: 100%;
+      }
+    }
+
+    /* Updated Header Section */
+    .header {
+      background: linear-gradient(135deg, #ff8a00, #e52e71);
+      padding: 70px 20px;
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: rgba(63, 46, 161, 0.2);
+      border-radius: 50%;
+      top: 20px;
+      left: -50px;
+      animation: moveCircle 4s linear infinite;
+    }
+
+    @keyframes moveCircle {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(100px); }
+      100% { transform: translateX(0); }
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #474e5d;
+      color: white;
+    }
+
+    /* Card Style */
+    .column {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+      transition: transform 0.3s ease-in-out;
+      background: white;
+      border-radius: 8px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .container {
+      padding: 16px;
+      text-align: center;
+    }
+
+    .title {
+      color: grey;
+    }
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 10px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    /* Footer Styling */
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      width: 100%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Navigation Bar -->
+<div class="topnav">
+  <a href="index.html" class="active">Home</a>
+  <a href="education.html">Education</a>
+  <a href="achievement.html">Achievement</a>
+  <a href="contact.html">Contact</a>
+  <a href="gallery.html">Gallery</a>
+</div>
+
+<!-- Contact Section -->
+<div class="contact-section" id="contact">
+  <h1>Contact</h1>
+</div>
+
+<!-- Contact Information Section -->
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="fb.jpg" alt="fb" style="width:100%">
+      <div class="container">
+        <h2>Facebook</h2>
+        <p class="title">Chrissya Henny's account</p>
+        <p>Do take a look at her Facebook account!</p>
+        <center><p><a href="https://www.facebook.com/share/17RrZxyqZV/?mibextid=LQQJ4d" class="button">Check out Facebook</a></p></center>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="emaili.jpg" alt="emaili" style="width:100%">
+      <div class="container">
+        <h2>Email Address & Phone Number</h2>
+        <p class="title">Contact for inquiries</p>
+        <p>syaenny16@gmail.com</p>
+        <p>+60 14-205 5481</p>
+        <center><p><a href="mailto:syaenny16@gmail.com" class="button">Email Now</a></p></center>
+        <center><p><a href="tel:+60142055481" class="button">Call Now</a></p></center>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="ig.jpg" alt="ig" style="width:100%">
+      <div class="container">
+        <h2>Instagram</h2>
+        <p class="title">Follow for updates!</p>
+        <p>_qsyaz</p>
+        <center><p><a href="https://www.instagram.com/_qsyaz?igsh=NHMxdHRqb3FmcWdr" class="button">Follow</a></p></center>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <p>&copy; <span id="year"></span> Nurzaidatul Azwa Binti Ismail. All Rights Reserved.</p>
+</footer>
+
+<script>
+  // Set the current year dynamically
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

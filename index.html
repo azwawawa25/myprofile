@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrissya's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+        }
+
+        /* Banner Section */
+        .banner {
+            background: url('sya4.jpg') no-repeat center center/cover;
+            height: 70vh;
+            position: relative;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Top Navigation Bar */
+        .topnav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #333;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .topnav a:hover {
+            background-color: #ff69b4;
+            color: white;
+            text-decoration: underline;
+        }
+
+        .topnav a.active {
+            background-color: dimgray;
+            color: white;
+        }
+
+        /* Column Layout */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 15px;
+            margin: 10px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Video Section */
+        .video-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .video-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer p:hover {
+            color: #ff69b4;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .video-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="banner">
+        <div class="content">
+            <h1>Chrissya Henny Anak Ewiim</h1>
+        </div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <div class="topnav">
+        <a href="index.html" class="active">Home</a>
+        <a href="education.html">Education</a>
+        <a href="achievement.html">Achievement</a>
+        <a href="contact.html">Contact</a>
+        <a href="gallery.html">Gallery</a>
+    </div>
+
+    <!-- Personal Information Section -->
+    <div class="row">
+        <div class="column">
+            <h2>Full Name:</h2>
+            <p>Chrissya Henny Anak Ewiim</p>
+            <h2>Number of Siblings:</h2>
+            <p>4</p>
+            <h2>Date of Birth:</h2>
+            <p>16th February 2004</p>
+        </div>
+        <div class="column">
+            <h2>About Me:</h2>
+            <p>Hi, my name is Chrissya Henny Anak Ewiim. I am currently taking Bachelor of Pharmacy With Hons at UiTM Puncak Alam. I am very interested in the medical field as my ambition is to help people. I always strive to make my family proud.</p>
+        </div>
+        <div class="column">
+            <h2>Place of Birth:</h2>
+            <p>Sarawak General Hospital</p>
+            <h2>Hobby:</h2>
+            <p>- Reading books</p>
+            <p>- Watching movies</p>
+            <p>- Spending time with family</p>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-section">
+        <h2>My Short Video</h2>
+        <div class="video-container">
+            <video controls>
+                <source src="syavid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Time Section -->
+    <center>
+        <div>
+            <button type="button" onclick="document.getElementById('demo').innerHTML=Date()">
+                Click here for Date and Time display!
+            </button>
+            <p id="demo"></p>
+        </div>
+    </center>
+    <br>
+
+    <!-- Song Section -->
+    <center>
+        <img src="hen.jpeg" width="250px" height="250px" alt="hen" border="50">
+    </center>
+<center>
+    <div class="audio-player">
+        <h2>Henry Moodie: Beat Up Car</h2>
+        <audio controls>
+            <source src="buc.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</center>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> Nurzaidatul Azwa Binti Ismail. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

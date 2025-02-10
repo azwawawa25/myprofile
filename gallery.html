@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Style the top navigation bar */
+    .topnav {
+      overflow: hidden;
+      background-color: beige;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style the topnav links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Change color on hover */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Style the active link */
+    .topnav a.active {
+      background-color: #666;
+      color: white;
+    }
+
+    body {
+      background-color: #f1f1f1;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Center the content */
+    .main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 50px;
+      word-break: break-word;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 30px;
+      color: #333;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .column {
+      width: 30%;
+      padding: 8px;
+      display: none; /* Hide all elements by default */
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .content {
+      background-color: white;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .content img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .content:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* The "show" class is added to the filtered elements */
+    .show {
+      display: block;
+    }
+
+    /* Style the buttons */
+    .btn {
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      background-color: white;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #ddd;
+    }
+
+    .btn.active {
+      background-color: #666;
+      color: white;
+    }
+
+    /* Add responsive design */
+    @media screen and (max-width: 768px) {
+      .column {
+        width: 100%;
+      }
+    }
+
+    /* Add subtle hover effect on the filter buttons */
+    #myBtnContainer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+  <h1>Gallery</h1>
+  <hr>
+
+  <div class="topnav">
+    <a href="index.html" class="button-link">Home</a>
+    <a href="education.html" class="button-link">Education</a>
+    <a href="achievement.html" class="button-link">Achievement</a>
+    <a href="contact.html" class="button-link">Contact</a>
+    <a href="gallery.html" class="button-link">Gallery</a>
+  </div>
+
+  <h2>Chrissya's Small Gallery</h2>
+
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    <button class="btn" onclick="filterSelection('me')"> Me</button>
+    <button class="btn" onclick="filterSelection('family')"> Family</button>
+    <button class="btn" onclick="filterSelection('friends')"> Friends</button>
+  </div>
+
+  <!-- Portfolio Gallery Grid -->
+  <div class="row">
+    <div class="column me">
+      <div class="content">
+        <img src="sya.jpg" alt="Sya">
+      </div>
+    </div>
+    <div class="column me">
+      <div class="content">
+        <img src="sya6.jpg" alt="Sya6">
+      </div>
+    </div>
+    <div class="column me">
+      <div class="content">
+        <img src="sya8.jpg" alt="Sya8">
+      </div>
+    </div>
+
+    <div class="column family">
+      <div class="content">
+        <img src="fam.jpg" alt="Fam">
+      </div>
+    </div>
+    <div class="column family">
+      <div class="content">
+        <img src="fam1.jpg" alt="Fam1">
+      </div>
+    </div>
+    <div class="column family">
+      <div class="content">
+        <img src="fam2.jpg" alt="Fam2">
+      </div>
+    </div>
+
+    <div class="column friends">
+      <div class="content">
+        <img src="us3.jpg" alt="Us3">
+      </div>
+    </div>
+    <div class="column friends">
+      <div class="content">
+        <img src="us4.jpg" alt="Us4">
+      </div>
+    </div>
+    <div class="column friends">
+      <div class="content">
+        <img src="us5.jpg" alt="Us5">
+      </div>
+    </div>
+  </div>
+
+  <!-- END MAIN -->
+</div>
+
+<script>
+  filterSelection("all");
+
+  function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("column");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+  }
+
+  function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {
+        element.className += " " + arr2[i];
+      }
+    }
+  }
+
+  function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+
+  // Add active class to the current button (highlight it)
+  var btnContainer = document.getElementById("myBtnContainer");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function () {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+</script>
+
+</body>
+</html>

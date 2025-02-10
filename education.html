@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Education</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+        }
+
+        /* Hero Section */
+        .container {
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .container img {
+            filter: brightness(70%);
+            object-fit: cover;
+            width: 100%;
+            height: 100vh;
+            min-height: 500px;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3.5rem;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out, glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #ff416c, 0 0 10px #ff4b2b;
+            }
+            to {
+                text-shadow: 0 0 10px #ff4b2b, 0 0 20px #ff416c;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation Bar */
+        .topnav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: black;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .topnav a:hover {
+            background-color: #ff69b4;
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: inline-block;
+            width: 250px;
+            margin: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px; /* Fixed height */
+            object-fit: cover; /* Ensures images fit properly */
+            border-radius: 5px;
+        }
+
+        .desc {
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer Section */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer p:hover {
+            color: #ff69b4; /* Pink hover effect */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .container img {
+                height: auto;
+            }
+
+            .centered {
+                font-size: 2rem;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="container">
+        <img src="educ.jpg" alt="Education">
+        <h1><div class="centered">Education</div></h1>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="achievement.html">Achievement</a>
+        <a href="contact.html">Contact</a>
+        <a href="gallery.html">Gallery</a>
+    </div>
+
+    <!-- Gallery Section -->
+    <center>
+        <div class="gallery">
+            <a href="kin.jpg">
+                <img src="kin.jpg" alt="Smart Kids Learning House">
+            </a>
+            <div class="desc">Smart Kids Learning House</div>
+        </div>
+
+        <div class="gallery">
+            <a href="sk.jpg">
+                <img src="sk.jpg" alt="SK Jalan Ong Tiang Swee">
+            </a>
+            <div class="desc">SK Jalan Ong Tiang Swee</div>
+        </div>
+
+        <div class="gallery">
+            <a href="smk.jpg">
+                <img src="smk.jpg" alt="SMK Sungai Tapang">
+            </a>
+            <div class="desc">SMK Sungai Tapang</div>
+        </div>
+
+        <div class="gallery">
+            <a href="dengkil.jpg">
+                <img src="dengkil.jpg" alt="UiTM Kampus Dengkil">
+            </a>
+            <div class="desc">UiTM Kampus Dengkil (Foundation in Science)</div>
+        </div>
+
+        <div class="gallery">
+            <a href="palam.jpg">
+                <img src="palam.jpg" alt="UiTM Kampus Puncak Alam">
+            </a>
+            <div class="desc">UiTM Kampus Puncak Alam (Bachelor of Pharmacy With Hons)</div>
+        </div>
+    </center>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> Nurzaidatul Azwa Binti Ismail. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
